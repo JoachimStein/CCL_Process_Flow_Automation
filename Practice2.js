@@ -4,11 +4,21 @@ const names = [
     "C"
 ]
 
-for (let i = 0; i < names.length; i++) {
-    if (i == 0) {
-        console.log(names[i] + " for Apple");
-    }
-    else {
-        console.log(names[i])
-    }
+try {
+    class car {
+        constructor(name,year) {
+            this.name = name;
+            this.year = year;
+        }
+        age() {
+            const date = new Date();
+            return date.getFullYear() - this.year;
+        }   
+     }
+
+     const myCar = new car("Ford", 1994);
+     console.log("The ", myCar.name, " is ", myCar.age(), " years old!");
+
+} catch(error) {
+    console.log(error.message);
 }
